@@ -1,46 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>TP1 - Evolución de pasos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TP1 - Conteo de pasos</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 50px;
+      color: #222;
+    }
+    h2 {
+      margin-top: 40px;
+      color: #444;
+    }
+    .chart {
+      
+      text-align: center;
+      margin: 20px 0;
+      text-align: center;
+    }
+    iframe {
+      border: none;
+      width: 100%;
+      height: 600px;
+    }
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
+
+  <h1>Exploración de pasos dados del 1/5 al 20/8</h1>
+
+  <section>
+    <h2 style="text-align: center;">¿Cuántos pasos dí cada día?</h2>
+    <div class="chart">
+      <div class='tableauPlaceholder' id='viz1756681645094' style='position: relative'>
+        <noscript>
+          <a href='#'>
+            <img alt='Pasos dados 1&#47;5 - 20&#47;8 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;pa&#47;pasos1&#47;Hoja1&#47;1_rss.png' style='border: none' />
+          </a>
+        </noscript>
+        <object class='tableauViz'  style='display:none;'>
+          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+          <param name='embed_code_version' value='3' />
+          <param name='site_root' value='' />
+          <param name='name' value='pasos1&#47;Hoja1' />
+          <param name='tabs' value='no' />
+          <param name='toolbar' value='yes' />
+          <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;pa&#47;pasos1&#47;Hoja1&#47;1.png' />
+          <param name='animate_transition' value='yes' />
+          <param name='display_static_image' value='yes' />
+          <param name='display_spinner' value='yes' />
+          <param name='display_overlay' value='yes' />
+          <param name='display_count' value='yes' />
+          <param name='language' value='es-ES' />
+        </object>
+      </div>
+      <script type='text/javascript'>
+        var divElement = document.getElementById('viz1756681645094');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width='1000px';
+        vizElement.style.height=(divElement.offsetWidth*0.23)+'px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>>
+    </div>
+  </section>
   
-  <div class='tableauPlaceholder' id='viz1756527364052' style='position: relative'>
-    <noscript>
-      <a href='#'>
-        <img alt='Pasos dados 1&#47;5 - 20&#47;8 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;pa&#47;pasos1&#47;Hoja1&#47;1_rss.png' style='border: none' />
-      </a>
-    </noscript>
-    <object class='tableauViz'  style='display:none;'>
-      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> 
-      <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
-      <param name='name' value='pasos1&#47;Hoja1' /><param name='tabs' value='no' />
-      <param name='toolbar' value='yes' />
-      <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;pa&#47;pasos1&#47;Hoja1&#47;1.png' /> 
-      <param name='animate_transition' value='yes' />
-      <param name='display_static_image' value='yes' />
-      <param name='display_spinner' value='yes' />
-      <param name='display_overlay' value='yes' />
-      <param name='display_count' value='yes' />
-      <param name='language' value='es-ES' />
-    </object>
-  </div>                
-  <script type='text/javascript'>                    
-    var divElement = document.getElementById('viz1756527364052');                    
-    var vizElement = divElement.getElementsByTagName('object')[0]; vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.50)+'px';;                    
-    var scriptElement = document.createElement('script'); scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js'; vizElement.parentNode.insertBefore(scriptElement, vizElement);                
-  </script>
-<h1>---------</h1>
-  <div class="flourish-embed" data-src="visualisation/24764778">
-    <script src="https://public.flourish.studio/resources/embed.js">
-      
+  <section>
+    <h2 style="text-align: center;">¿Cuantos pasos dí cada mes?</h2>
+    <div class="chart">
+      <div class="flourish-embed" data-src="visualisation/24764778" data-width="65%">
+        <script src="https://public.flourish.studio/resources/embed.js">
+        </script>
+        <noscript>
+          <img src="https://public.flourish.studio/visualisation/24764778/thumbnail" width="65%" alt="visualization" />
+        </noscript>
+      </div>
+    </div>
+  </section>
+  
+  <section>
+  <h2 style="text-align: center;">Comparación de otros datos</h2>
+  
+  <div class="fila-graficos" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+
+    <!-- Gráfico RAWGraphs -->
+    <div class="chart" style="flex: 1 1 300px; max-width: 500px;">
+      <img src="avg-pasos-hora.svg" alt="Pasos dados promedio por hora">
+    </div>
+
+    <!-- Gráfico DataWrapper -->
+    <div class="chart" style="flex: 1 1 300px; max-width: 500px;">
+    <iframe title="(AVG) Cantidad de pasos a lo largo del día" aria-label="Line chart" id="datawrapper-chart-R0bBN" src="https://datawrapper.dwcdn.net/R0bBN/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="412" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}})}();
     </script>
-    <noscript>
-      <img src="https://public.flourish.studio/visualisation/24764778/thumbnail" width="100%" alt="visualization" />
-    </noscript>
+    </div>
   </div>
+  </section>
   
+
+  <section>
+    <h2 style="text-align: center;">Promedio de pasos por hora vs cantidad de pasos a lo largo del día</h2>
+    <div class="chart">
+      <div class="flourish-embed flourish-chart" data-src="visualisation/24784526" data-width="80%">
+        <script src="https://public.flourish.studio/resources/embed.js">
+        </script>
+        <noscript>
+        <img src="https://public.flourish.studio/visualisation/24784526/thumbnail" width="80%" alt="chart visualization" />
+        </noscript>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Trabajo Práctico de Data Science · Nico Merlotto · 2025</p>
+  </footer>
+
 </body>
 </html>
