@@ -38,6 +38,28 @@
       font-size: 0.9em;
       color: #777;
     }
+    .fila-graficos {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start; /* evita que se superpongan */
+}
+
+.fila-graficos .chart {
+  flex: 1 1 300px;
+  max-width: 500px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.fila-graficos .chart img,
+.fila-graficos .chart iframe {
+  width: 100%;
+  height: auto;
+  display: block;
+}
   </style>
 </head>
 <body>
