@@ -46,7 +46,7 @@
   align-items: flex-start; /* evita que se superpongan */
 }
 
-.fila-graficos .chart {
+  .fila-graficos .chart {
   flex: 1 1 300px;
   max-width: 500px;
   display: flex;
@@ -54,11 +54,20 @@
   flex-direction: column;
 }
 
-.fila-graficos .chart img,
-.fila-graficos .chart iframe {
+  .fila-graficos .chart img,
+  .fila-graficos .chart iframe {
   width: 100%;
   height: auto;
   display: block;
+}
+    .tableauPlaceholder {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+  .tableauPlaceholder object {
+  display: block;
+  margin: 0 auto;
 }
   </style>
 </head>
