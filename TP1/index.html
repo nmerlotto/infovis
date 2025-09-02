@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TP1 - Conteo de pasos</title>
   <style>
+    /* --------- Estilos generales --------- */
     body {
       font-family: Arial, sans-serif;
       margin: 40px;
@@ -12,63 +13,88 @@
       color: #333;
       line-height: 1.6;
     }
-    h1 {
+
+    h1, h2, h4, h5 {
       text-align: center;
-      margin-bottom: 50px;
+      margin: 20px 0;
       color: #222;
     }
+
+    h1 {
+      margin-bottom: 50px;
+    }
+
     h2 {
       margin-top: 40px;
       color: #444;
     }
-    .chart {
-      
-      text-align: center;
-      margin: 20px 0;
-      text-align: center;
-    }
-    iframe {
-      border: none;
-      width: 100%;
-      height: 600px;
-    }
+
     footer {
       margin-top: 60px;
       text-align: center;
       font-size: 0.9em;
       color: #777;
     }
+
+    /* --------- Contenedores --------- */
+    .chart {
+      margin: 20px auto;
+      text-align: center;
+      max-width: 1400px;
+    }
+
+    iframe, img {
+      border: none;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     .fila-graficos {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    align-items: flex-start; /* evita que se superpongan */
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-top: 20px;
     }
 
     .fila-graficos .chart {
-    flex: 1 1 300px;
-    max-width: 500px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+      flex: 1 1 300px;
+      max-width: 500px;
     }
 
-    .fila-graficos .chart img,
-    .fila-graficos .chart iframe {
-    width: 100%;
-    height: auto;
-    display: block;
-    }
-    
+    /* --------- Tableau --------- */
     .tableauPlaceholder {
-    margin: 0 auto;
-    max-width: 1400px;
+      margin: 0 auto;
+      max-width: 90%;
+      position: relative;
     }
-  
+
     .tableauPlaceholder object {
-    display: block;
-    margin: 0 auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* --------- Flourish --------- */
+    .flourish-embed {
+      margin: 20px auto;
+      display: block;
+      max-width: 90%;  /* evita que se desborde */
+    }
+
+    .flourish-embed iframe {
+      display: block !important; /* fuerza a que sea bloque */
+      margin: 0 auto !important; /* lo centra */
+    }
+
+    /* --------- Texto descriptivo --------- */
+    .descripcion {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+      font-size: 0.95em;
+      color: #555;
     }
   </style>
 </head>
@@ -76,93 +102,114 @@
 
   <h1>Exploración de pasos dados del 1/5 al 20/8</h1>
 
+  <!-- Sección 1: Tableau -->
   <section>
-    <h2 style="text-align: center;">¿Cuántos pasos dí cada día?</h2>
+    <h2>¿Cuántos pasos dí cada día?</h2>
     <div class="chart">
-      <div class='tableauPlaceholder' id='viz1756681645094' style='position: relative'>
+      <div class="tableauPlaceholder" id="viz-pasos-dia">
         <noscript>
-          <a href='#'>
-            <img alt='Pasos dados 1&#47;5 - 20&#47;8 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;pa&#47;pasos1&#47;Hoja1&#47;1_rss.png' style='border: none' />
+          <a href="#">
+            <img src="https://public.tableau.com/static/images/pa/pasos1/Hoja1/1_rss.png" 
+                 alt="Pasos dados 1/5 - 20/8" />
           </a>
         </noscript>
-        <object class='tableauViz'  style='display:none;'>
-          <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-          <param name='embed_code_version' value='3' />
-          <param name='site_root' value='' />
-          <param name='name' value='pasos1&#47;Hoja1' />
-          <param name='tabs' value='no' />
-          <param name='toolbar' value='yes' />
-          <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;pa&#47;pasos1&#47;Hoja1&#47;1.png' />
-          <param name='animate_transition' value='yes' />
-          <param name='display_static_image' value='yes' />
-          <param name='display_spinner' value='yes' />
-          <param name='display_overlay' value='yes' />
-          <param name='display_count' value='yes' />
-          <param name='language' value='es-ES' />
+        <object class="tableauViz" style="display:none;">
+          <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+          <param name="embed_code_version" value="3" />
+          <param name="site_root" value="" />
+          <param name="name" value="pasos1/Hoja1" />
+          <param name="tabs" value="no" />
+          <param name="toolbar" value="yes" />
+          <param name="static_image" value="https://public.tableau.com/static/images/pa/pasos1/Hoja1/1.png" />
+          <param name="animate_transition" value="yes" />
+          <param name="display_static_image" value="yes" />
+          <param name="display_spinner" value="yes" />
+          <param name="display_overlay" value="yes" />
+          <param name="display_count" value="yes" />
+          <param name="language" value="es-ES" />
         </object>
       </div>
-      <script type='text/javascript'>
-        var divElement = document.getElementById('viz1756681645094');
-        var vizElement = divElement.getElementsByTagName('object')[0];
-        vizElement.style.width='90%';
-        vizElement.style.height=(divElement.offsetWidth*0.23)+'px';
-        var scriptElement = document.createElement('script');
-        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+      <script type="text/javascript">
+        const divElement = document.getElementById("viz-pasos-dia");
+        const vizElement = divElement.getElementsByTagName("object")[0];
+        vizElement.style.width = "90%";
+        vizElement.style.height = (divElement.offsetWidth * 0.23) + "px";
+        const scriptElement = document.createElement("script");
+        scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
         vizElement.parentNode.insertBefore(scriptElement, vizElement);
       </script>
     </div>
   </section>
-  
-  <section>
-    <h2 style="text-align: center;">¿Cuantos pasos dí cada mes?</h2>
-    <div class="chart">
-      <div class="flourish-embed" data-src="visualisation/24764778" data-width="65%">
-        <script src="https://public.flourish.studio/resources/embed.js">
-        </script>
-        <noscript>
-          <img src="https://public.flourish.studio/visualisation/24764778/thumbnail" width="75%" alt="visualization" />
 
-        </noscript>
-                      <h5 style="text-align: center">
-                Mi esquema laboral es de 2 dias de trabajo x 2 dias de franco. Como mi trabajo implica caminar mucho, se puede ver cierto patrón en la cantidad de pasos dados durante el mes.
-                Los 3 días que mas pasos hice (1/5, 27/7 y 10/8), se condicen con 3 fiestas a las que fuí.
-              </h5>
-      </div>
+  <!-- Sección 2: Flourish (mensual) -->
+  <section>
+    <h2>¿Cuántos pasos dí cada mes?</h2>
+    <div class="chart">
+      <div class="flourish-embed" data-src="visualisation/24764778" data-width="65%"></div>
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript>
+        <img src="https://public.flourish.studio/visualisation/24764778/thumbnail" alt="Pasos por mes" />
+      </noscript>
+      <p class="descripcion">
+        Mi esquema laboral es de 2 días de trabajo x 2 días de franco. Como mi trabajo implica caminar mucho,
+        se puede ver el patrón en la cantidad de pasos dados durante el mes.  
+        Los 3 días con más pasos (1/5, 27/7 y 10/8) coinciden con fiestas a las que asistí.
+      </p>
     </div>
   </section>
-  
+
+  <!-- Sección 3: Comparaciones -->
   <section>
-  <h2 style="text-align: center;">Comparación de otros datos</h2>
-    <h4 style="text-align: center">Promedio de pasos dados a cada hora y Cantidad de pasos promedio dados a lo largo del día</h4>  
-  <div class="fila-graficos" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+    <h2>Comparación de otros datos</h2>
+    <h4>Promedio de pasos por hora y promedio de pasos a lo largo del día</h4>  
 
-    <!-- Gráfico RAWGraphs -->
-    <div class="chart" style="flex: 1 1 300px; max-width: 500px;">
-      <img src="avg-pasos-hora.svg" alt="Pasos dados promedio por hora">
-    </div>
-
-    <!-- Gráfico DataWrapper -->
-    <div class="chart" style="flex: 1 1 300px; max-width: 500px;">
-    <iframe title="(AVG) Cantidad de pasos a lo largo del día" aria-label="Line chart" id="datawrapper-chart-R0bBN" src="https://datawrapper.dwcdn.net/R0bBN/1/" scrolling="no" frameborder="0" style="width: 0; min-width: 100% !important; border: none;" height="412" data-external="1"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",function(a){if(void 0!==a.data["datawrapper-height"]){var e=document.querySelectorAll("iframe");for(var t in a.data["datawrapper-height"])for(var r,i=0;r=e[i];i++)if(r.contentWindow===a.source){var d=a.data["datawrapper-height"][t]+"px";r.style.height=d}}})}();
-    </script>
-    </div>
-  </div>
-    <h5 style="text-align: center">
-      El horario donde mas pasos doy son las 04:00 y las 15:00 debido a que mi horario laboral es de 4-15 y me hago el recorrido CASA - PARADA DE COLECTIVO - TRABAJO
-    </h5>
-  </section>
-  
-
-  <section>
-    <h2 style="text-align: center;">Promedio de pasos por hora vs Cantidad de pasos a lo largo del día (AVG)</h2>
-    <div class="chart">
-      <div class="flourish-embed flourish-chart" data-src="visualisation/24784526" data-width="75%">
-        <script src="https://public.flourish.studio/resources/embed.js">
-        </script>
-        <noscript>
-        <img src="https://public.flourish.studio/visualisation/24784526/thumbnail" width="80%" alt="chart visualization" />
-        </noscript>
+    <div class="fila-graficos">
+      <div class="chart">
+        <img src="avg-pasos-hora.svg" alt="Pasos promedio por hora">
       </div>
+
+      <div class="chart">
+        <iframe 
+          title="(AVG) Cantidad de pasos a lo largo del día" 
+          aria-label="Line chart"
+          id="datawrapper-chart-R0bBN" 
+          src="https://datawrapper.dwcdn.net/R0bBN/1/" 
+          scrolling="no" 
+          frameborder="0" 
+          height="412">
+        </iframe>
+        <script type="text/javascript">
+          window.addEventListener("message", function(event) {
+            if (event.data["datawrapper-height"]) {
+              const iframes = document.querySelectorAll("iframe");
+              for (let key in event.data["datawrapper-height"]) {
+                for (let iframe of iframes) {
+                  if (iframe.contentWindow === event.source) {
+                    iframe.style.height = event.data["datawrapper-height"][key] + "px";
+                  }
+                }
+              }
+            }
+          });
+        </script>
+      </div>
+    </div>
+
+    <p class="descripcion">
+      El horario donde más pasos doy son las 04:00 y las 15:00 debido a que mi horario laboral es de 4 a 15
+      y realizo el recorrido CASA → PARADA DE COLECTIVO → TRABAJO.
+    </p>
+  </section>
+
+  <!-- Sección 4: Flourish comparativo -->
+  <section>
+    <h2>Promedio de pasos por hora vs pasos a lo largo del día (AVG)</h2>
+    <div class="chart">
+      <div class="flourish-embed flourish-chart" data-src="visualisation/24784526" data-width="75%"></div>
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript>
+        <img src="https://public.flourish.studio/visualisation/24784526/thumbnail" alt="Comparación de gráficos" />
+      </noscript>
     </div>
   </section>
 
