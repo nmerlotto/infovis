@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TP1 - Conteo de pasos</title>
+  <style>
+    /* --------- Estilos generales --------- */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f9fafb;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5 {
+      text-align: center;
+      margin: 20px 0;
+      color: #222;
+    }
+
+    h1 {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #444;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    /* --------- Contenedores --------- */
+    .chart {
+      margin: 20px auto;
+      text-align: center;
+      max-width: 1400px;
+    }
+
+    iframe, img {
+      border: none;
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .fila-graficos {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+
+    .fila-graficos .chart {
+      flex: 1 1 300px;
+      max-width: 500px;
+    }
+
+    /* --------- Tableau --------- */
+    .tableauPlaceholder {
+      margin: 0 auto;
+      max-width: 90%;
+      position: relative;
+    }
+
+    .tableauPlaceholder object {
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* --------- Flourish --------- */
+    .flourish-embed {
+      margin: 20px auto;
+      display: block;
+      max-width: 90%;  /* evita que se desborde */
+    }
+    
+    .flourish-embed iframe {
+      display: block !important; /* fuerza a que sea bloque */
+      margin: 0 auto !important; /* lo centra */
+    }
+
+    .fila-graficos-flourish {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+      align-items: flex-start;
+    }
+
+    .fila-graficos-flourish .flourish-chart {
+      flex: 1 1 400px;
+      max-width: 500px;
+    }
+
+    /* --------- Texto descriptivo --------- */
+    .descripcion {
+      max-width: 800px;
+      margin: 20px auto;
+      text-align: center;
+      font-size: 0.95em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exploración de pasos dados del 1/5 al 20/8</h1>
+
+  <!-- Sección 1: Tableau -->
+  <section>
+    <h2>¿Cuántos pasos dí cada día?</h2>
+    <div class="chart">
+      <div class="tableauPlaceholder" id="viz-pasos-dia">
+        <noscript>
+          <a href="#">
+            <img src="https://public.tableau.com/static/images/pa/pasos1/Hoja1/1_rss.png" 
+                 alt="Pasos dados 1/5 - 20/8" />
+          </a>
+        </noscript>
+        <object class="tableauViz" style="display:none;">
+          <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+          <param name="embed_code_version" value="3" />
+          <param name="site_root" value="" />
+          <param name="name" value="pasos1/Hoja1" />
+          <param name="tabs" value="no" />
+          <param name="toolbar" value="yes" />
+          <param name="static_image" value="https://public.tableau.com/static/images/pa/pasos1/Hoja1/1.png" />
+          <param name="animate_transition" value="yes" />
+          <param name="display_static_image" value="yes" />
+          <param name="display_spinner" value="yes" />
+          <param name="display_overlay" value="yes" />
+          <param name="display_count" value="yes" />
+          <param name="language" value="es-ES" />
+        </object>
+      </div>
+      <script type="text/javascript">
+        const divElement = document.getElementById("viz-pasos-dia");
+        const vizElement = divElement.getElementsByTagName("object")[0];
+        vizElement.style.width = "90%";
+        vizElement.style.height = (divElement.offsetWidth * 0.23) + "px";
+        const scriptElement = document.createElement("script");
+        scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+    </div>
+  </section>
+
+  <!-- Sección 2: Flourish (mensual) -->
+  <section>
+    <h2>¿Cuántos pasos dí cada mes?</h2>
+    <div class="chart">
+      <div class="flourish-embed" data-src="visualisation/24764778" data-width="65%"></div>
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript>
+        <img src="https://public.flourish.studio/visualisation/24764778/thumbnail" alt="Pasos por mes" />
+      </noscript>
+      <p class="descripcion">
+        Mi esquema laboral es de 2 días de trabajo x 2 días de franco. Como mi trabajo implica caminar mucho,
+        se puede ver el patrón en la cantidad de pasos dados durante el mes.  
+        Los 3 días con más pasos (1/5, 27/7 y 10/8) coinciden con fiestas a las que asistí.
+      </p>
+    </div>
+  </section>
+
+  <!-- Sección 3: Comparaciones -->
+  <section>
+    <h2>Comparación de otros datos</h2>
+        <h3>¿Qué diferencias hay entre la cantidad de pasos que doy entre un día laboral y un franco?</h3>
+
+    <!-- Nuevos gráficos Flourish en fila -->
+    <div class="fila-graficos-flourish">
+      <div class="flourish-embed flourish-chart" data-src="visualisation/24942748" data-width="100%"></div>
+      <div class="flourish-embed flourish-chart" data-src="visualisation/24942696" data-width="100%"></div>
+    </div>
+    <script src="https://public.flourish.studio/resources/embed.js"></script>
+    
+    <h3>Promedio de pasos por hora y promedio de pasos a lo largo del día</h3>  
+
+    <div class="fila-graficos">
+      <div class="chart">
+        <img src="avg-pasos-hora.svg" alt="Pasos promedio por hora">
+      </div>
+
+      <div class="chart">
+        <iframe 
+          title="(AVG) Cantidad de pasos a lo largo del día" 
+          aria-label="Line chart"
+          id="datawrapper-chart-R0bBN" 
+          src="https://datawrapper.dwcdn.net/R0bBN/1/" 
+          scrolling="no" 
+          frameborder="0" 
+          height="412">
+        </iframe>
+        <script type="text/javascript">
+          window.addEventListener("message", function(event) {
+            if (event.data["datawrapper-height"]) {
+              const iframes = document.querySelectorAll("iframe");
+              for (let key in event.data["datawrapper-height"]) {
+                for (let iframe of iframes) {
+                  if (iframe.contentWindow === event.source) {
+                    iframe.style.height = event.data["datawrapper-height"][key] + "px";
+                  }
+                }
+              }
+            }
+          });
+        </script>
+      </div>
+    </div>
+
+    <p class="descripcion">
+      El horario donde más pasos doy son las 04:00 y las 15:00 debido a que mi horario laboral es de 4 a 15
+      y realizo el recorrido CASA → PARADA DE COLECTIVO → TRABAJO.
+    </p>
+
+  </section>
+
+  <!-- Sección 5: Flourish comparativo -->
+  <section>
+    <h2>Promedio de pasos por hora vs pasos a lo largo del día (AVG)</h2>
+    <div class="chart">
+      <div class="flourish-embed flourish-chart" data-src="visualisation/24784526" data-width="75%"></div>
+      <script src="https://public.flourish.studio/resources/embed.js"></script>
+      <noscript>
+        <img src="https://public.flourish.studio/visualisation/24784526/thumbnail" alt="Comparación de gráficos" />
+      </noscript>
+    </div>
+  </section>
+
+  <footer>
+    <p>Visualización de Datos Personales · Nicolas Merlotto · 2025</p>
+  </footer>
+
+</body>
+</html>
